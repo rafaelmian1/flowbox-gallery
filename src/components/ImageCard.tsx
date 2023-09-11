@@ -1,5 +1,6 @@
 import {PicsumImage} from "@lib/lorem-picsum";
 import {useSelectedLayout} from "@store/appStore";
+import twMerge from "clsx";
 
 type ImageCardProps = {
   image: PicsumImage;
@@ -8,12 +9,13 @@ type ImageCardProps = {
 
 export const ImageCard = (props: ImageCardProps) => {
   const selectedLayout = useSelectedLayout();
-  const cursor =
-    selectedLayout === "carousel" ? "cursor-grab" : "cursor-pointer";
 
   const vertical = (
     <article
-      className={`max-w-[90vw] overflow-hidden rounded-xl bg-gray-200 object-cover shadow-lg hover:${cursor} hover:shadow-xl md:max-w-[50vw]`}
+      className={twMerge(
+        "hover: max-w-[90vw] overflow-hidden rounded-xl bg-gray-200 object-cover shadow-lg hover:shadow-xl md:max-w-[50vw]",
+        selectedLayout === "carousel" ? "cursor-grab" : "cursor-pointer",
+      )}
     >
       <img
         className="w-full object-cover"
@@ -34,7 +36,10 @@ export const ImageCard = (props: ImageCardProps) => {
 
   const horizontal = (
     <article
-      className={`mb-6 flex max-w-[90vw] overflow-hidden rounded-xl bg-gray-200 object-cover shadow-lg hover:${cursor} hover:shadow-xl md:max-w-[75vw]`}
+      className={twMerge(
+        "mb-6 flex max-w-[90vw] overflow-hidden rounded-xl bg-gray-200 object-cover shadow-lg hover:shadow-xl md:max-w-[75vw]",
+        selectedLayout === "carousel" ? "cursor-grab" : "cursor-pointer",
+      )}
     >
       <img
         className="w-[42vw] object-cover"
