@@ -1,4 +1,4 @@
-import {Image, validateImage} from "./image";
+import {PicsumImage, validateImage} from "./image";
 
 import axios from "axios";
 const baseUrl = "https://picsum.photos/v2";
@@ -6,7 +6,7 @@ const baseUrl = "https://picsum.photos/v2";
 export type GetList = (params: {
   limit: number;
   page?: number;
-}) => Promise<Image[]>;
+}) => Promise<PicsumImage[]>;
 export const getList: GetList = async params => {
   try {
     const response = await axios.get(`${baseUrl}/list`, {params});

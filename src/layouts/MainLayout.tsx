@@ -1,4 +1,5 @@
 import {useSelectedLayout} from "@store/appStore";
+import {Header} from "@components/Header";
 import {CarouselLayout} from "./CarouselLayout";
 import {GridLayout} from "./GridLayout";
 import {ListLayout} from "./ListLayout";
@@ -11,11 +12,28 @@ export const MainLayout = () => {
 
   if (imagesListQuery.isLoading) return <Loader />;
 
+  //ToDo: Error component
+  if (imagesListQuery.isError) return null;
+
   return (
-    <div className="bg-white shadow-lg h-screen w-screen grid place-content-center lg:items-center lg:justify-center">
-      {selectedLayout === "carousel" ? <CarouselLayout /> : null}
-      {selectedLayout === "grid" ? <GridLayout /> : null}
-      {selectedLayout === "list" ? <ListLayout /> : null}
+    <div className="flex h-screen flex-col">
+      <Header />
+      <main
+        className="grid grow place-content-center bg-gray-300 pt-6 shadow-lg"
+        style={{scrollbarGutter: "stable both-edges"}}
+      >
+        {selectedLayout === "carousel" ? (
+          <CarouselLayout images={imagesListQuery.data} />
+        ) : null}
+
+        {selectedLayout === "grid" ? (
+          <GridLayout images={imagesListQuery.data} />
+        ) : null}
+
+        {selectedLayout === "list" ? (
+          <ListLayout images={imagesListQuery.data} />
+        ) : null}
+      </main>
     </div>
   );
 };

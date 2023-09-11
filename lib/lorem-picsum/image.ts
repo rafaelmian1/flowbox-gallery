@@ -1,6 +1,6 @@
 import {object, number, string, TypeOf} from "zod";
 
-export const imageSchema = object({
+export const picsumImageSchema = object({
   id: string(),
   author: string(),
   width: number(),
@@ -9,10 +9,10 @@ export const imageSchema = object({
   download_url: string(),
 });
 
-export type Image = TypeOf<typeof imageSchema>;
+export type PicsumImage = TypeOf<typeof picsumImageSchema>;
 
-export const validateImage = (image: unknown): Image | never => {
-  const parsed = imageSchema.safeParse(image);
+export const validateImage = (image: unknown): PicsumImage | never => {
+  const parsed = picsumImageSchema.safeParse(image);
   if (!parsed.success) throw new Error("Invalid image structure");
   return parsed.data;
 };
