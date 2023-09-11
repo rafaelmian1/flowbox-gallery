@@ -14,10 +14,5 @@ export default defineConfig(() => {
       strictPort: true,
       port: 3000,
     },
-    build: {
-      lib: {
-        entry: resolve(__dirname, "lib/lorem-picsum"),
-      },
-    },
   };
 });
