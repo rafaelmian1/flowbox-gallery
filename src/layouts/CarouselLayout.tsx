@@ -25,7 +25,7 @@ export const CarouselLayout = (props: CarouselLayoutProps) => {
       {props.images.map(image => (
         <SwiperSlide
           key={image.id}
-          className="flex items-center justify-center"
+          className={`flex h-[80vh] items-center justify-center`}
         >
           <ImageCard image={image} />
         </SwiperSlide>
