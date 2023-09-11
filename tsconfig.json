@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vitest/globals"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -19,11 +20,12 @@
     "paths": {
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],
+      "@lib/*": ["../lib/*"],
+      "@mock/*": ["mock/*"],
       "@pages/*": ["pages/*"],
       "@services/*": ["services/*"],
       "@store/*": ["store/*"],
-      "@utils/*": ["utils/*"],
-      "@lib/*": ["../lib/*"]
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src", "lib"],

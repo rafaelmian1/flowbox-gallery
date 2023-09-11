@@ -21,6 +21,7 @@ export const ImageCard = (props: ImageCardProps) => {
         className="w-full object-cover"
         src={props.image.download_url}
         alt="Random image"
+        data-testid={props.image.id}
       />
       <div className="h-[12vh] p-2 xl:p-4">
         <h3 className="text-lg lg:mb-1 lg:text-2xl">{props.image.author}</h3>

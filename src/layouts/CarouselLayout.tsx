@@ -16,6 +16,7 @@ export const CarouselLayout = (props: CarouselLayoutProps) => {
   const {width} = useViewport();
   return (
     <Swiper
+      data-testid="carousel-layout-container"
       loop={true}
       spaceBetween={10}
       navigation={width > 420}

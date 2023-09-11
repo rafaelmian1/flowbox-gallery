@@ -7,7 +7,10 @@ type ListLayoutProps = {
 
 export const ListLayout = (props: ListLayoutProps) => {
   return (
-    <section className="flex w-screen flex-col items-center gap-4 px-2 md:px-4">
+    <section
+      data-testid="list-layout-container"
+      className="flex w-screen flex-col items-center gap-4 px-2 md:px-4"
+    >
       {props.images.map(image => (
         <ImageCard key={image.id} image={image} variant="horizontal" />
       ))}
