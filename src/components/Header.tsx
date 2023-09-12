@@ -10,13 +10,9 @@ export const Header = () => {
         <img
           className=" w-18 md:w-32"
           src="https://getflowbox.com/wp-content/uploads/2022/10/flowbox-logo.svg"
-          alt="logo"
+          alt="flowbox-logo"
         />
       </a>
-
-      <span className="mt-[7px] text-lg text-gray-900 md:mt-1 md:text-[1.6rem]">
-        Photo Gallery.
-      </span>
 
       <nav className="flex items-center gap-6">
         <BiCarousel
