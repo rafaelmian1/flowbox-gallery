@@ -1,21 +1,21 @@
 import {useState, useEffect} from "react";
 
 type ViewportSize = {
-  width: number;
-  height: number;
+  vw: number;
+  vh: number;
 };
 
 const useViewport = (): ViewportSize => {
   const [viewportSize, setViewportSize] = useState<ViewportSize>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    vw: window.innerWidth,
+    vh: window.innerHeight,
   });
 
   useEffect(() => {
     const handleResize = () => {
       setViewportSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        vw: window.innerWidth,
+        vh: window.innerHeight,
       });
     };
 

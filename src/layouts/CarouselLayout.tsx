@@ -13,13 +13,13 @@ type CarouselLayoutProps = {
 };
 
 export const CarouselLayout = (props: CarouselLayoutProps) => {
-  const {width} = useViewport();
+  const {vw} = useViewport();
   return (
     <Swiper
       data-testid="carousel-layout-container"
       loop={true}
       spaceBetween={10}
-      navigation={width > 420}
+      navigation={vw > 420}
       modules={[FreeMode, Navigation, EffectFade]}
       className="w-screen md:w-[90vw]"
     >
