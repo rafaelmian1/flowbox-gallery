@@ -13,10 +13,10 @@ describe("Carousel navigation", () => {
       .querySelector(".swiper-button-next")
       ?.setAttribute("data-testid", "carousel-button-next");
 
-    userEvent.click(await screen.findByTestId("carousel-button-next"));
+    userEvent.click(await screen.findByTestId(/carousel-button-next/i));
     expect(await screen.findByTestId(images[1].id)).toBeInTheDocument();
 
-    userEvent.click(await screen.findByTestId("carousel-button-prev"));
+    userEvent.click(await screen.findByTestId(/carousel-button-prev/i));
     expect(await screen.findByTestId(images[0].id)).toBeInTheDocument();
   });
 });
